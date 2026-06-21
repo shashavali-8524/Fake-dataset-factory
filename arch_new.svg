@@ -1,0 +1,165 @@
+<svg viewBox="0 0 860 920" xmlns="http://www.w3.org/2000/svg" width="860" height="920" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <linearGradient id="grad-header" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e40af"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="grad-best" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+    <linearGradient id="grad-engines" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="grad-eval" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#451a03"/>
+      <stop offset="100%" style="stop-color:#78350f"/>
+    </linearGradient>
+    <filter id="glow-best">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#10b981" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Transparent background -->
+
+  <!-- ─── STEP 1: Dataset ─── -->
+  <rect x="270" y="20" width="320" height="64" rx="12" fill="url(#grad-header)"/>
+  <text x="430" y="47" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Kaggle Chest X-Ray Dataset</text>
+  <text x="430" y="68" font-size="11" fill="#c7d2fe" text-anchor="middle">5,216 images · Normal + Pneumonia</text>
+
+  <!-- Arrow down -->
+  <line x1="430" y1="84" x2="430" y2="112" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ─── STEP 2: Preprocessing ─── -->
+  <rect x="290" y="116" width="280" height="54" rx="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="430" y="139" font-size="12" font-weight="700" fill="#dbeafe" text-anchor="middle">Preprocessing</text>
+  <text x="430" y="158" font-size="10.5" fill="#93c5fd" text-anchor="middle">Resize → 64×64 · Grayscale · Normalize</text>
+
+  <!-- Split arrows -->
+  <line x1="350" y1="170" x2="230" y2="200" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="510" y1="170" x2="630" y2="200" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Class boxes -->
+  <rect x="150" y="204" width="160" height="40" rx="8" fill="#14532d" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="230" y="229" font-size="12" font-weight="700" fill="#86efac" text-anchor="middle">Normal (1,341)</text>
+
+  <rect x="550" y="204" width="160" height="40" rx="8" fill="#713f12" stroke="#eab308" stroke-width="1.5"/>
+  <text x="630" y="229" font-size="12" font-weight="700" fill="#fde047" text-anchor="middle">Pneumonia (3,875)</text>
+
+  <!-- arrows into engines box -->
+  <line x1="230" y1="244" x2="290" y2="280" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="630" y1="244" x2="570" y2="280" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ─── STEP 3: 6 Generation Engines ─── -->
+  <rect x="60" y="284" width="740" height="220" rx="16" fill="url(#grad-engines)" stroke="#334155" stroke-width="1.5"/>
+  <text x="430" y="314" font-size="13" font-weight="600" fill="#94a3b8" text-anchor="middle" letter-spacing="3">6 GENERATION ENGINES</text>
+
+  <!-- Engine cards: row 1 -->
+  <!-- SD -->
+  <rect x="80" y="326" width="150" height="64" rx="10" fill="#3730a3" stroke="#6366f1" stroke-width="1"/>
+  <text x="155" y="349" font-size="11" font-weight="700" fill="#e0e7ff" text-anchor="middle">Stable Diffusion</text>
+  <text x="155" y="364" font-size="9.5" fill="#a5b4fc" text-anchor="middle">img2img · 2022</text>
+  <text x="155" y="380" font-size="10" fill="#818cf8" text-anchor="middle" font-weight="600">FID: 94.71</text>
+
+  <!-- DCGAN -->
+  <rect x="246" y="326" width="150" height="64" rx="10" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="321" y="349" font-size="11" font-weight="700" fill="#dbeafe" text-anchor="middle">DCGAN</text>
+  <text x="321" y="364" font-size="9.5" fill="#93c5fd" text-anchor="middle">BCE Loss · 2014</text>
+  <text x="321" y="380" font-size="10" fill="#60a5fa" text-anchor="middle" font-weight="600">FID: 15.24</text>
+
+  <!-- WGAN-GP -->
+  <rect x="412" y="326" width="150" height="64" rx="10" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+  <text x="487" y="349" font-size="11" font-weight="700" fill="#dcfce7" text-anchor="middle">WGAN-GP</text>
+  <text x="487" y="364" font-size="9.5" fill="#86efac" text-anchor="middle">Wasserstein · 2017</text>
+  <text x="487" y="380" font-size="10" fill="#4ade80" text-anchor="middle" font-weight="600">FID: 11.10</text>
+
+  <!-- VQ-VAE -->
+  <rect x="578" y="326" width="200" height="64" rx="10" fill="#581c87" stroke="#a855f7" stroke-width="1"/>
+  <text x="678" y="349" font-size="11" font-weight="700" fill="#f3e8ff" text-anchor="middle">VQ-VAE</text>
+  <text x="678" y="364" font-size="9.5" fill="#d8b4fe" text-anchor="middle">Codebook · 2017</text>
+  <text x="678" y="380" font-size="10" fill="#c084fc" text-anchor="middle" font-weight="600">FID: 46.59</text>
+
+  <!-- Row 2 -->
+  <!-- DDPM -->
+  <rect x="163" y="406" width="200" height="84" rx="10" fill="#0c4a6e" stroke="#0ea5e9" stroke-width="1"/>
+  <text x="263" y="432" font-size="11" font-weight="700" fill="#e0f2fe" text-anchor="middle">DDPM</text>
+  <text x="263" y="450" font-size="9.5" fill="#7dd3fc" text-anchor="middle">Diffusion · 2020</text>
+  <text x="263" y="465" font-size="9.5" fill="#7dd3fc" text-anchor="middle">1000 timesteps</text>
+  <text x="263" y="482" font-size="10" fill="#38bdf8" text-anchor="middle" font-weight="600">FID: 8.96</text>
+
+  <!-- Flow Matching v2 — BEST (with glow) -->
+  <rect x="379" y="400" width="360" height="90" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2.5" filter="url(#glow-best)"/>
+  <!-- Star banner -->
+  <rect x="379" y="400" width="360" height="18" rx="10" fill="url(#grad-best)"/>
+  <rect x="379" y="410" width="360" height="8" fill="#059669"/>
+  <text x="559" y="414" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1">★ BEST MODEL</text>
+  <text x="559" y="440" font-size="13" font-weight="700" fill="#ecfdf5" text-anchor="middle">Flow Matching v2</text>
+  <text x="559" y="457" font-size="10" fill="#6ee7b7" text-anchor="middle">OT-CFM + Attention + EMA · 2022</text>
+  <text x="559" y="472" font-size="10" fill="#6ee7b7" text-anchor="middle">100 epochs · dopri5 ODE solver</text>
+  <text x="559" y="487" font-size="11" font-weight="700" fill="#34d399" text-anchor="middle">FID: 6.20 ← state-of-the-art</text>
+
+  <!-- Arrow down from engines -->
+  <line x1="430" y1="504" x2="430" y2="534" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="430" y="524" font-size="10" fill="#64748b" text-anchor="middle" font-style="italic">100 synthetic images / model</text>
+
+  <!-- ─── STEP 4: Evaluation ─── -->
+  <rect x="80" y="538" width="700" height="140" rx="16" fill="url(#grad-eval)" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="430" y="566" font-size="13" font-weight="700" fill="#fde68a" text-anchor="middle" letter-spacing="2">EVALUATION PIPELINE</text>
+
+  <!-- FID box -->
+  <rect x="100" y="580" width="290" height="82" rx="10" fill="#7c2d12" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="245" y="603" font-size="12" font-weight="700" fill="#fed7aa" text-anchor="middle">Domain-Adapted FID</text>
+  <text x="245" y="620" font-size="10" fill="#a78bfa" text-anchor="middle" font-weight="600">torchxrayvision DenseNet121</text>
+  <text x="245" y="636" font-size="9.5" fill="#fdba74" text-anchor="middle">pretrained on NIH + CheXpert + MIMIC</text>
+  <text x="245" y="651" font-size="9.5" fill="#fdba74" text-anchor="middle">medically meaningful feature space</text>
+
+  <!-- TSTR box -->
+  <rect x="410" y="580" width="350" height="82" rx="10" fill="#581c87" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="585" y="603" font-size="12" font-weight="700" fill="#e9d5ff" text-anchor="middle">Proxy TSTR Accuracy</text>
+  <text x="585" y="620" font-size="10" fill="#c4b5fd" text-anchor="middle">xrv classifier · Lung Opacity &gt; 0.5</text>
+  <text x="585" y="636" font-size="9.5" fill="#d8b4fe" text-anchor="middle">100% all models (texture detection)</text>
+  <text x="585" y="651" font-size="9.5" fill="#d8b4fe" text-anchor="middle">non-discriminative for this task</text>
+
+  <!-- Arrow down -->
+  <line x1="430" y1="678" x2="430" y2="706" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ─── STEP 5: Output ─── -->
+  <rect x="180" y="710" width="500" height="56" rx="12" fill="#14532d" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="430" y="737" font-size="13" font-weight="700" fill="#bbf7d0" text-anchor="middle">Export Package</text>
+  <text x="430" y="754" font-size="11" fill="#86efac" text-anchor="middle">images/ · labels.csv · metrics.json → ZIP</text>
+
+  <!-- Arrow down -->
+  <line x1="430" y1="766" x2="430" y2="796" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ─── STEP 6: Gradio UI ─── -->
+  <rect x="230" y="800" width="400" height="70" rx="14" fill="#0f172a" stroke="#475569" stroke-width="1.5"/>
+  <text x="430" y="830" font-size="14" font-weight="700" fill="#f1f5f9" text-anchor="middle">Gradio UI</text>
+  <text x="430" y="850" font-size="11" fill="#94a3b8" text-anchor="middle">Pick model · class · count → generate + download</text>
+  <text x="430" y="866" font-size="10" fill="#64748b" text-anchor="middle">auto-detects trained models · HuggingFace Spaces</text>
+
+  <!-- Step labels on the left with circles -->
+  <circle cx="28" cy="52" r="18" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="28" y="56" font-size="8" font-weight="700" fill="#e2e8f0" text-anchor="middle">INPUT</text>
+
+  <circle cx="28" cy="143" r="18" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="28" y="147" font-size="8" font-weight="700" fill="#e2e8f0" text-anchor="middle">PREP</text>
+
+  <circle cx="28" cy="394" r="18" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="28" y="398" font-size="8" font-weight="700" fill="#e2e8f0" text-anchor="middle">GEN</text>
+
+  <circle cx="28" cy="608" r="18" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="28" y="612" font-size="8" font-weight="700" fill="#e2e8f0" text-anchor="middle">EVAL</text>
+
+  <circle cx="28" cy="835" r="18" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="28" y="839" font-size="8" font-weight="700" fill="#e2e8f0" text-anchor="middle">UI</text>
+
+  <!-- vertical step connector on left (dashed) -->
+  <line x1="28" y1="70" x2="28" y2="125" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="28" y1="161" x2="28" y2="376" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="28" y1="412" x2="28" y2="590" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="28" y1="626" x2="28" y2="817" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+</svg>
